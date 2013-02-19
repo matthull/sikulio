@@ -21,14 +21,14 @@ Usage
 
     require 'sikulio'
 
-    Sikulio::Config.image_asdf = 'images'
+    Sikulio::Config.image_root = 'images'
 
     class MyComponent < Sikulio::Component
       init_image_elements -- Adds a Sikulio element for each .png files found in images/my_component
 
       relative_element :first_name_field,
         :relative_to => :first_name_label,
-	:offset_x => 30, -- Look x pixels to the right of the relative_to element's center
+        :offset_x => 30, -- Look x pixels to the right of the relative_to element's center
         :offset_y => 0   -- Look y pixels down from the relative_to element's center
     end
 
