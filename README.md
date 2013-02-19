@@ -32,6 +32,11 @@ Usage
         :offset_y => 0   -- Look y pixels down from the relative_to element's center
     end
 
+    comp = MyComponent.new
+    
+    comp.first_name_label.click
+    comp.first_name_label.type 'Joe'
+
 Running the test suite
 ----------------------
     
