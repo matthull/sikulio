@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["hull.matt@gmail.com"]
   gem.description   = %q{A Page Object style framework leveraging Sikuli}
   gem.summary       = %q{Test automation framework for all the things}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/matthull/sikulio"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
