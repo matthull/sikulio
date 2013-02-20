@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'bundler'
-require 'fakefs/spec_helpers'
 
 begin
   Bundler.setup(:default, :development)
