@@ -36,8 +36,8 @@ Usage
 
     comp = MyComponent.new
     
-    comp.first_name_label.click
-    comp.first_name_label.type 'Joe'
+    comp.first_name_field.click
+    comp.first_name_field.type 'Joe'
 
 Running the test suite
 ----------------------
