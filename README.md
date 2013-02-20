@@ -3,6 +3,8 @@ Sikulio: A framework for testing with Sikuli
 
 Sikulio provides a Page Object style framework on top of Sikuli.
 
+Still very much a work in progress.
+
 Requirements
 ------------
 
@@ -14,7 +16,7 @@ See the [Sikuli Ruby README] (https://github.com/chaslemley/sikuli_ruby/blob/mas
 Installation
 ------------
 
-gem install sikulio
+gem install sikulio --pre
 
 Usage
 -----
