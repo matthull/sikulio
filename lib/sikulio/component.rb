@@ -61,6 +61,15 @@ module Sikulio
 
     end
 
+    # Defines an element based on a string rather than file (for OCR)
+    def self.text_element(el_name, text)
+      
+      define_method(el_name) do
+        Element.new self.instance_variable_get(:@screen),
+	  text
+      end
+    end
+
     # Defines an element positioned relative to another element
     # e.g. a text input field, relative to the field label
     def self.relative_element(el_name, params = {})
