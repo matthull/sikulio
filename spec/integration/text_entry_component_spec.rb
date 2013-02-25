@@ -53,10 +53,10 @@ describe Component do
   class TypingIsFun < Component
     init_image_elements 'typing_is_fun'
 
-    set_default_x_offset 200
+    set_default_x_offset 100
+
     relative_element :enter_text_field,
       :relative_to => :enter_text_label
-
   end
   
   it "clicks the image" do
@@ -64,6 +64,8 @@ describe Component do
     app = TypingIsFunApp.new
     tif = TypingIsFun.new
 	
+    tif.enter_text_field.offset_x.should == 100
+
     tif.enter_text_field.enter "blah and blah"
 
     tif.expected_result.find

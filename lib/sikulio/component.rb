@@ -74,17 +74,19 @@ module Sikulio
     end
 
     def self.set_default_x_offset(offset)
-      @@default_x_offset = offset  
+      @default_x_offset = offset
     end
 
     # Defines an element positioned relative to another element
     # e.g. a text input field, relative to the field label
     def self.relative_element(el_name, params = {})
 
+      default_x_offset = @default_x_offset
+
       define_method(el_name) do
         RelativeElement.new self.instance_variable_get(:@screen),
 	  self.send(params[:relative_to]).ident,
-	  params[:offset_x] || @@default_x_offset,
+	  params[:offset_x] || default_x_offset,
 	  params[:offset_y] || 0
       end
     end
