@@ -36,10 +36,15 @@ module Sikulio
       screen.find ident
     end
 
+    # Send some keystrokes
+    def type(keystrokes)
+      screen.type keystrokes
+    end
+
     # Click and then send some keystrokes
     def enter(keystrokes)
       self.click
-      screen.type keystrokes
+      self.type keystrokes
     end
 
     # Wait until this element is visible

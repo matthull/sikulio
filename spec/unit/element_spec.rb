@@ -38,6 +38,13 @@ describe Element do
      @el.find
     end
   end
+
+  describe "#type" do
+    it "sends some keystrokes to its screen" do
+      @el.screen.should_receive(:type).with('asdf')
+      @el.type 'asdf'
+    end
+  end
   
   describe "#enter" do
     it "clicks the element then sends some keystrokes" do
