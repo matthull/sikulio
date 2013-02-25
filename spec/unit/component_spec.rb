@@ -69,4 +69,30 @@ describe Component do
 
     it { should respond_to :some_field }
   end
+
+  describe "#relative_element", "with defaults" do
+
+    class MyComponent < Component
+      init_image_elements
+
+      set_default_x_offset 20
+
+      relative_element :some_field,
+        :relative_to => :some_label
+    end
+
+    let(:my_component) { MyComponent.new }
+    subject { my_component }
+
+    #its(:default_x_offset) { should == 20 }
+    it { should respond_to :some_field }
+
+    it "sets x offsets based on its default x offset" do
+      subject.some_field.offset_x.should == 20 
+    end
+
+    it "sets y offsets to 0" do
+      subject.some_field.offset_y.should == 0
+    end
+  end
 end

@@ -28,6 +28,9 @@ module Sikulio
  
     # A Sikuli screen instance that will be shared by this component's elements 
     attr_accessor :screen
+    
+    # Default x offset to use when creating relative elements
+    attr_accessor :default_x_offset
 
     # The root folder under which GUI images are stored
     cattr_accessor :image_root
@@ -70,15 +73,19 @@ module Sikulio
       end
     end
 
+    def self.set_default_x_offset(offset)
+      @@default_x_offset = offset  
+    end
+
     # Defines an element positioned relative to another element
     # e.g. a text input field, relative to the field label
     def self.relative_element(el_name, params = {})
-      
+
       define_method(el_name) do
         RelativeElement.new self.instance_variable_get(:@screen),
 	  self.send(params[:relative_to]).ident,
-	  params[:offset_x],
-	  params[:offset_y]
+	  params[:offset_x] || @@default_x_offset,
+	  params[:offset_y] || 0
       end
     end
   end
