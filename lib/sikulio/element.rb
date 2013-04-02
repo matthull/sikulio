@@ -40,6 +40,10 @@ module Sikulio
       screen.find ident
     end
 
+    def exists
+      screen.exists ident
+    end
+
     # Click and then send some keystrokes
     def enter(keystrokes)
       self.click

@@ -45,6 +45,13 @@ describe Element do
       @el.type 'asdf'
     end
   end
+
+  describe "#exists" do
+    it "checks if it exists on the screen" do
+      @el.screen.should_receive(:exists).with(file)
+      @el.exists
+    end
+  end
   
   describe "#enter" do
     it "clicks the element then sends some keystrokes" do
