@@ -1,3 +1,5 @@
+require 'active_support/core_ext/module/delegation.rb'
+
 module Sikulio
 
   ##
@@ -34,6 +36,8 @@ module Sikulio
 
     # The root folder under which GUI images are stored
     cattr_accessor :image_root
+
+    delegate :type, :to => :screen
 
     def component_path
       @component_path ||= self.class.to_s.underscore

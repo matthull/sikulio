@@ -1,7 +1,11 @@
+require 'active_support/core_ext/module/delegation.rb'
+
 module Sikulio
   class Element
 
     attr_accessor :screen
+
+    delegate :type, :to => :screen
 
     # The identifier (e.g. filename or OCR string) which Sikuli will use to locate the element
     attr_accessor :ident
@@ -34,11 +38,6 @@ module Sikulio
     # Find this element on screen
     def find
       screen.find ident
-    end
-
-    # Send some keystrokes
-    def type(keystrokes)
-      screen.type keystrokes
     end
 
     # Click and then send some keystrokes

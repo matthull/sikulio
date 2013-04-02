@@ -95,4 +95,14 @@ describe Component do
       subject.some_field.offset_y.should == 0
     end
   end
+
+  describe "#type" do
+    class MyComponent < Component; end
+
+    it "sends some keystrokes to its screen" do
+      comp = MyComponent.new
+      comp.screen.should_receive(:type).with('asdf')
+      comp.type 'asdf'
+    end
+  end
 end
